@@ -1,0 +1,120 @@
+﻿<!--@AiCode-->
+<div class="list-container">
+    <div class="container mt-4">
+        <!-- Page Header -->
+        <div class="page-header taskmind-list-header mb-4">
+            <div class="tm-list-brand">
+                <div class="tm-list-brand-icon">
+                    <i class="bi bi-list-task"></i>
+                </div>
+                <div class="tm-list-brand-text">
+                    <div class="tm-list-brand-kicker">{{ 'TASKMIND.BRAND_PREFIX' | translate }}<span>{{ 'TASKMIND.BRAND_HIGHLIGHT' | translate }}</span></div>
+                    <h3 class="mb-0">{{ 'TODO_LIST.TITLE' | translate }}</h3>
+                </div>
+            </div>
+            <div class="tm-list-header-right">
+                <div class="tm-list-meta">
+                    <strong>{{ dataItems.length }}</strong> {{ 'TASKMIND.TASKS' | translate }}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Toolbar -->
+        <div class="list-toolbar">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <button *ngIf="canAdd" class="btn btn-primary" (click)="addCommand()">
+                        <i class="bi bi-plus-circle me-2"></i>
+                        <span class="d-none d-sm-inline">{{ 'TODO_LIST.ADD_ITEM' | translate }}</span>
+                        <span class="d-inline d-sm-none"><i class="bi bi-plus"></i></span>
+                    </button>
+                </div>
+                <div class="col">
+                    <input *ngIf="canSearch" type="text" class="form-control" [(ngModel)]="searchTerm" [placeholder]="'TODO_LIST.SEARCH_PLACEHOLDER' | translate">
+                </div>
+                <div class="col-auto">
+                    <button *ngIf="canRefresh" class="btn btn-outline-primary" (click)="reloadData()" title="{{ 'TODO_LIST.REFRESH' | translate }}">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- List Items -->
+        <div class="list-items">
+            <div *ngFor="let item of dataItems" class="modern-list-item">
+                <!-- Item Header -->
+                <div class="list-item-header">
+                    <div class="list-item-icon">
+                        <i class="bi bi-list-check"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h5 class="list-item-title">
+                            {{ item.title }}
+                            <span class="ms-2 badge bg-info">
+                                <i class="bi bi-hash me-1"></i>
+                                {{ item.taskCount }} {{ 'TODO_LIST.TASKS' | translate }}
+                            </span>
+                        </h5>
+                    </div>
+                    <div>
+                        <span class="badge" 
+                              [ngClass]="item.status === 0 ? 'bg-warning' : item.status === 1 ? 'bg-success' : 'bg-danger'">
+                            {{ item.status === 0 ? ('TODO_LIST.STATUS.GENERATING' | translate) : 
+                               item.status === 1 ? ('TODO_LIST.STATUS.READY' | translate) : 
+                               ('TODO_LIST.STATUS.ERROR' | translate) }}
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Description -->
+                <p class="list-item-description" *ngIf="item.description">
+                    {{ item.description }}
+                </p>
+                
+                <!-- Details Grid -->
+                <div class="list-item-details">
+                    <div class="detail-row">
+                        <span class="detail-label">
+                            <i class="bi bi-calendar me-1"></i>
+                            {{ 'TODO_LIST.CREATED_AT' | translate }}:
+                        </span>
+                        <span class="detail-value">{{ item.createdAt | date:'dd.MM.yyyy HH:mm' }}</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">
+                            <i class="bi bi-info-circle me-1"></i>
+                            {{ 'TODO_LIST.DETAIL_LEVEL' | translate }}:
+                        </span>
+                        <span class="detail-value">
+                            {{ item.detailLevel === 0 ? ('TODO_LIST.DETAIL_LEVEL_SHORT' | translate) : 
+                               item.detailLevel === 1 ? ('TODO_LIST.DETAIL_LEVEL_MEDIUM' | translate) : 
+                               ('TODO_LIST.DETAIL_LEVEL_DETAILED' | translate) }}
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Actions -->
+                <div class="list-item-actions">
+                    <button *ngIf="canEdit" class="btn btn-outline-secondary" (click)="editCommand(item)">
+                        <i class="bi bi-pencil me-2"></i>
+                        {{ 'TODO_LIST.EDIT' | translate }}
+                    </button>
+                    <button *ngIf="canDelete" class="btn btn-outline-danger" (click)="deleteCommand(item)">
+                        <i class="bi bi-trash me-2"></i>
+                        {{ 'TODO_LIST.DELETE' | translate }}
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Empty State -->
+            <div *ngIf="dataItems.length === 0" class="empty-state">
+                <div class="empty-state-icon">
+                    <i class="bi bi-inbox"></i>
+                </div>
+                <p class="empty-state-text">{{ 'TODO_LIST.NO_DATA' | translate }}</p>
+            </div>
+        </div>
+    </div>
+</div>

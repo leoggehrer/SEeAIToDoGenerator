@@ -1,0 +1,115 @@
+﻿<!--@AiCode-->
+<div *ngIf="dataItem" class="modern-edit-container">
+    <div class="modern-edit-card">
+        <div class="modern-edit-header d-flex justify-content-between align-items-center">
+            <h3><i class="bi bi-check2-square me-2"></i>{{ title | translate }}</h3>
+            <button type="button" class="btn-close-custom" [attr.aria-label]="'COMMON.CLOSE' | translate" (click)="dismiss()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modern-edit-body">
+            <form (ngSubmit)="submitForm()" #editForm="ngForm">
+                <!-- Grundinformationen -->
+                <div class="form-section">
+                    <h4 class="form-section-title">
+                        <i class="bi bi-info-circle"></i>
+                        {{ 'TODO_TASK_EDIT.BASIC_INFO' | translate }}
+                    </h4>
+                    
+                    <div class="modern-form-group">
+                        <label for="text" class="modern-form-label">
+                            <i class="bi bi-pencil"></i>
+                            {{ 'TODO_TASK_EDIT.TEXT' | translate }}
+                        </label>
+                        <input id="text" class="form-control modern-form-control" [(ngModel)]="dataItem.text" name="text" required maxlength="500" />
+                    </div>
+                    
+                    <div class="modern-form-group">
+                        <label for="note" class="modern-form-label">
+                            <i class="bi bi-sticky"></i>
+                            {{ 'TODO_TASK_EDIT.NOTE' | translate }}
+                        </label>
+                        <textarea id="note" class="form-control modern-form-control" [(ngModel)]="dataItem.note" name="note" maxlength="1000" rows="3"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Kategorisierung -->
+                <div class="form-section">
+                    <h4 class="form-section-title">
+                        <i class="bi bi-tag"></i>
+                        {{ 'TODO_TASK_EDIT.CATEGORIZATION' | translate }}
+                    </h4>
+                    
+                    <div class="modern-form-group">
+                        <label for="todoListId" class="modern-form-label">
+                            <i class="bi bi-list-task"></i>
+                            {{ 'TODO_TASK_EDIT.TODO_LIST' | translate }}
+                        </label>
+                        <select id="todoListId" class="form-select modern-form-select" [(ngModel)]="dataItem.todoListId" name="todoListId" required>
+                            <option [ngValue]="null">{{ 'TODO_TASK_EDIT.SELECT_TODO_LIST' | translate }}</option>
+                            <option *ngFor="let list of todoLists" [ngValue]="list.id">{{ list.title }}</option>
+                        </select>
+                    </div>
+                    
+                    <div class="modern-form-group">
+                        <label for="category" class="modern-form-label">
+                            <i class="bi bi-tag"></i>
+                            {{ 'TODO_TASK_EDIT.CATEGORY' | translate }}
+                        </label>
+                        <input id="category" class="form-control modern-form-control" [(ngModel)]="dataItem.category" name="category" required maxlength="100" />
+                    </div>
+                    
+                    <div class="modern-form-group">
+                        <label for="priority" class="modern-form-label">
+                            <i class="bi bi-exclamation-circle"></i>
+                            {{ 'TODO_TASK_EDIT.PRIORITY' | translate }}
+                        </label>
+                        <select id="priority" class="form-select modern-form-select" [(ngModel)]="dataItem.priority" name="priority" required>
+                            <option *ngFor="let p of priorities" [ngValue]="p">
+                                {{ p === 0 ? ('TODO_TASK_EDIT.PRIORITY_LOW' | translate) : 
+                                   p === 1 ? ('TODO_TASK_EDIT.PRIORITY_MEDIUM' | translate) : 
+                                   ('TODO_TASK_EDIT.PRIORITY_HIGH' | translate) }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Status und Reihenfolge -->
+                <div class="form-section">
+                    <h4 class="form-section-title">
+                        <i class="bi bi-sliders"></i>
+                        {{ 'TODO_TASK_EDIT.STATUS_ORDER' | translate }}
+                    </h4>
+                    
+                    <div class="modern-form-group">
+                        <label for="sortOrder" class="modern-form-label">
+                            <i class="bi bi-arrow-down-up"></i>
+                            {{ 'TODO_TASK_EDIT.SORT_ORDER' | translate }}
+                        </label>
+                        <input id="sortOrder" type="number" class="form-control modern-form-control" [(ngModel)]="dataItem.sortOrder" name="sortOrder" required />
+                    </div>
+                    
+                    <div class="modern-form-check">
+                        <input type="checkbox" class="form-check-input modern-form-check-input" id="isDone" [(ngModel)]="dataItem.isDone" name="isDone" />
+                        <label class="modern-form-check-label" for="isDone">
+                            <i class="bi bi-check-circle me-1"></i>
+                            {{ 'TODO_TASK_EDIT.IS_DONE' | translate }}
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Actions -->
+                <div class="modern-form-actions">
+                    <button class="btn modern-btn-save" type="submit" [disabled]="!editForm.valid">
+                        <i class="bi bi-check-lg me-2"></i>
+                        {{ 'COMMON.SAVE' | translate }}
+                    </button>
+                    <button class="btn modern-btn-cancel" type="button" (click)="cancelForm()">
+                        <i class="bi bi-x-lg me-2"></i>
+                        {{ 'COMMON.CANCEL' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+<div class="taskmind-page">
+  <header>
+    <div class="logo">
+      <div class="logo-icon">*</div>
+      <div class="logo-name">{{ 'TASKMIND.BRAND_PREFIX' | translate }}<span>{{ 'TASKMIND.BRAND_HIGHLIGHT' | translate }}</span></div>
+    </div>
+    <div class="hdr-right">
+      <div class="hdr-lists-count">
+        <strong>{{ lists.length }}</strong> {{ 'TASKMIND.LISTS' | translate }}
+      </div>
+      <div class="ai-badge"><div class="ai-dot"></div>{{ 'TASKMIND.AI_ACTIVE' | translate }}</div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="left-panel">
+      <div class="input-hero">
+        <div class="input-hero-label">{{ 'TASKMIND.WHAT_PLANNED' | translate }}</div>
+        <div class="input-hero-sub">{{ 'TASKMIND.WHAT_PLANNED_SUB' | translate }}</div>
+
+        <div class="desc-wrap">
+          <textarea
+            class="desc-input"
+            [(ngModel)]="descInput"
+            [placeholder]="'TASKMIND.DESCRIPTION_PLACEHOLDER' | translate"
+            rows="4"></textarea>
+        </div>
+
+        <div class="options-row">
+          <div class="opt-group">
+            <div class="opt-label">{{ 'TASKMIND.TASK_COUNT' | translate }}</div>
+            <select class="opt-select" [(ngModel)]="optCount">
+              <option *ngFor="let countOption of countOptions" [ngValue]="countOption">{{ countOption }} {{ 'TASKMIND.TASKS' | translate }}</option>
+            </select>
+          </div>
+          <div class="opt-group">
+            <div class="opt-label">{{ 'TASKMIND.DETAIL_LEVEL' | translate }}</div>
+            <select class="opt-select" [(ngModel)]="optDetail">
+              <option *ngFor="let option of detailOptions" [ngValue]="option.value">{{ option.labelKey | translate }}</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-generate" [disabled]="isLoading" (click)="generateList()">
+          <div class="gen-spin" [style.display]="isLoading ? 'block' : 'none'"></div>
+          <span>{{ isLoading ? ('TASKMIND.GENERATING' | translate) : ('TASKMIND.GENERATE_BUTTON' | translate) }}</span>
+        </button>
+      </div>
+
+      <div class="history-section">
+        <input class="form-control mb-3" type="text" [(ngModel)]="searchTerm" [placeholder]="'TASKMIND.HISTORY_SEARCH_PLACEHOLDER' | translate">
+        <div class="history-title">{{ 'TASKMIND.MY_LISTS' | translate }}</div>
+        <div class="history-list" *ngIf="filteredLists.length > 0; else noListsTemplate">
+          <div
+            *ngFor="let list of filteredLists; trackBy: trackByListId"
+            class="history-item"
+            [class.active]="list.id === activeListId"
+            (click)="selectList(list.id)">
+            <div class="hist-info">
+              <div class="hist-title">{{ list.title || (list.description | slice:0:35) }}</div>
+              <div class="hist-meta">
+                {{ list.status === todoStatus.Generating ? ('TASKMIND.GENERATING_SHORT' | translate) : (tasksOf(list).length + ' ' + ('TASKMIND.TASKS' | translate)) }}
+              </div>
+            </div>
+            <div class="hist-progress" *ngIf="tasksOf(list).length > 0">
+              <div class="hist-frac">{{ doneCount(list) }}/{{ tasksOf(list).length }}</div>
+              <div class="hist-bar"><div class="hist-bar-fill" [style.width.%]="progressPct(list)"></div></div>
+            </div>
+            <button class="btn-del-list" (click)="$event.stopPropagation(); deleteList(list.id)">x</button>
+          </div>
+        </div>
+        <ng-template #noListsTemplate>
+          <div class="no-lists">{{ 'TASKMIND.NO_LISTS' | translate }}</div>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <ng-container *ngIf="activeList as list; else emptyStateTemplate">
+        <div class="list-view" *ngIf="list.status !== todoStatus.Generating; else generatingTemplate">
+          <div class="list-view-header">
+            <div class="list-view-title">{{ list.title || list.description }}</div>
+            <div class="list-view-meta">
+              <span class="lvm-chip">{{ tasksOf(list).length }} {{ 'TASKMIND.TASKS' | translate }}</span>
+              <span class="lvm-chip">{{ levelLabel(list.detailLevel) | translate }}</span>
+              <span class="lvm-chip gold" *ngIf="doneCount(list) > 0">{{ doneCount(list) }} {{ 'TASKMIND.DONE' | translate }}</span>
+            </div>
+          </div>
+
+          <div class="progress-section" *ngIf="tasksOf(list).length > 0">
+            <div class="progress-label">
+              <span class="progress-text">{{ 'TASKMIND.PROGRESS' | translate }}</span>
+              <span class="progress-pct">{{ progressPct(list) }}%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" [style.width.%]="progressPct(list)"></div>
+            </div>
+          </div>
+
+          <div class="todos-list">
+            <ng-container *ngFor="let group of groupedTodos; trackBy: trackByCategory">
+              <div class="cat-divider">
+                <div class="cat-name">{{ group.category }}</div>
+                <div class="cat-line"></div>
+              </div>
+
+              <div class="todo-item" [class.done]="todo.isDone" *ngFor="let todo of group.items; let i = index; trackBy: trackByTaskId" [style.animation-delay.s]="i * 0.04">
+                <div class="todo-check" [class.checked]="todo.isDone" (click)="toggleTodo(list.id, todo.id)"></div>
+                <div class="todo-body">
+                  <div class="todo-text">{{ todo.text }}</div>
+                  <div class="todo-note" *ngIf="todo.note">{{ todo.note }}</div>
+                </div>
+                <div class="todo-right">
+                  <span class="prio-badge" [ngClass]="priorityClass(todo.priority)">{{ priorityLabel(todo.priority) | translate }}</span>
+                  <button class="btn-del-todo" (click)="deleteTodo(list.id, todo.id)">x</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="actions-bar">
+            <div class="actions-left"><strong>{{ doneCount(list) }}</strong> {{ 'TASKMIND.OF' | translate }} {{ tasksOf(list).length }} {{ 'TASKMIND.DONE' | translate }}</div>
+            <div class="actions-right">
+              <button class="btn-sm danger" *ngIf="doneCount(list) > 0" (click)="clearDone(list.id)">{{ 'TASKMIND.CLEAR_DONE' | translate }}</button>
+              <button class="btn-sm danger" (click)="deleteList(list.id)">{{ 'TASKMIND.DELETE_LIST' | translate }}</button>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #generatingTemplate>
+          <div class="list-view">
+            <div class="list-view-header">
+              <div class="list-view-title loading-title">{{ 'TASKMIND.GENERATING_SHORT' | translate }}</div>
+            </div>
+            <div class="generating-block">
+              <div class="gen-line"></div>
+              <div class="gen-line"></div>
+              <div class="gen-line"></div>
+              <div class="gen-line"></div>
+              <div class="gen-line"></div>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+
+      <ng-template #emptyStateTemplate>
+        <div class="empty-right">
+          <div class="empty-icon">*</div>
+          <div class="empty-title">{{ 'TASKMIND.NO_LIST_YET' | translate }}</div>
+          <div class="empty-sub">{{ 'TASKMIND.EMPTY_SUB' | translate }}</div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

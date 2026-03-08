@@ -1,0 +1,86 @@
+﻿<!--@AiCode-->
+<div *ngIf="dataItem" class="modern-edit-container">
+    <div class="modern-edit-card">
+        <div class="modern-edit-header d-flex justify-content-between align-items-center">
+            <h3><i class="bi bi-list-task me-2"></i>{{ title | translate }}</h3>
+            <button type="button" class="btn-close-custom" [attr.aria-label]="'COMMON.CLOSE' | translate" (click)="dismiss()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modern-edit-body">
+            <form (ngSubmit)="submitForm()" #editForm="ngForm">
+                <!-- Grundinformationen -->
+                <div class="form-section">
+                    <h4 class="form-section-title">
+                        <i class="bi bi-info-circle"></i>
+                        {{ 'TODO_LIST_EDIT.BASIC_INFO' | translate }}
+                    </h4>
+                    
+                    <div class="modern-form-group">
+                        <label for="title" class="modern-form-label">
+                            <i class="bi bi-pencil"></i>
+                            {{ 'TODO_LIST_EDIT.TITLE' | translate }}
+                        </label>
+                        <input id="title" class="form-control modern-form-control" [(ngModel)]="dataItem.title" name="title" required maxlength="200" />
+                    </div>
+                    
+                    <div class="modern-form-group">
+                        <label for="description" class="modern-form-label">
+                            <i class="bi bi-text-paragraph"></i>
+                            {{ 'TODO_LIST_EDIT.DESCRIPTION' | translate }}
+                        </label>
+                        <textarea id="description" class="form-control modern-form-control" [(ngModel)]="dataItem.description" name="description" maxlength="1000" rows="3"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Einstellungen -->
+                <div class="form-section">
+                    <h4 class="form-section-title">
+                        <i class="bi bi-sliders"></i>
+                        {{ 'TODO_LIST_EDIT.SETTINGS' | translate }}
+                    </h4>
+                    
+                    <div class="modern-form-group">
+                        <label for="detailLevel" class="modern-form-label">
+                            <i class="bi bi-info-circle"></i>
+                            {{ 'TODO_LIST_EDIT.DETAIL_LEVEL' | translate }}
+                        </label>
+                        <select id="detailLevel" class="form-select modern-form-select" [(ngModel)]="dataItem.detailLevel" name="detailLevel" required>
+                            <option *ngFor="let level of detailLevels" [ngValue]="level">
+                                {{ level === 0 ? ('TODO_LIST_EDIT.DETAIL_LEVEL_SHORT' | translate) : 
+                                   level === 1 ? ('TODO_LIST_EDIT.DETAIL_LEVEL_MEDIUM' | translate) : 
+                                   ('TODO_LIST_EDIT.DETAIL_LEVEL_DETAILED' | translate) }}
+                            </option>
+                        </select>
+                    </div>
+                    
+                    <div class="modern-form-group">
+                        <label for="status" class="modern-form-label">
+                            <i class="bi bi-circle-fill"></i>
+                            {{ 'TODO_LIST_EDIT.STATUS' | translate }}
+                        </label>
+                        <select id="status" class="form-select modern-form-select" [(ngModel)]="dataItem.status" name="status" required>
+                            <option *ngFor="let s of statuses" [ngValue]="s">
+                                {{ s === 0 ? ('TODO_LIST_EDIT.STATUS_GENERATING' | translate) : 
+                                   s === 1 ? ('TODO_LIST_EDIT.STATUS_READY' | translate) : 
+                                   ('TODO_LIST_EDIT.STATUS_ERROR' | translate) }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Actions -->
+                <div class="modern-form-actions">
+                    <button class="btn modern-btn-save" type="submit" [disabled]="!editForm.valid">
+                        <i class="bi bi-check-lg me-2"></i>
+                        {{ 'COMMON.SAVE' | translate }}
+                    </button>
+                    <button class="btn modern-btn-cancel" type="button" (click)="cancelForm()">
+                        <i class="bi bi-x-lg me-2"></i>
+                        {{ 'COMMON.CANCEL' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+﻿{
+  "profiles": {
+    "SEeAIToDoGenerator.CodeGenApp": {
+      "commandName": "Project",
+      "commandLineArgs": ""
+    }
+  }
+}

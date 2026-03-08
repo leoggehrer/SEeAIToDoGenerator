@@ -1,0 +1,129 @@
+﻿<!--@AiCode-->
+<div class="list-container">
+    <div class="container mt-4">
+        <!-- Page Header -->
+        <div class="page-header taskmind-list-header mb-4">
+            <div class="tm-list-brand">
+                <div class="tm-list-brand-icon">
+                    <i class="bi bi-check2-square"></i>
+                </div>
+                <div class="tm-list-brand-text">
+                    <div class="tm-list-brand-kicker">{{ 'TASKMIND.BRAND_PREFIX' | translate }}<span>{{ 'TASKMIND.BRAND_HIGHLIGHT' | translate }}</span></div>
+                    <h3 class="mb-0">{{ 'TODO_TASK.TITLE' | translate }}</h3>
+                </div>
+            </div>
+            <div class="tm-list-header-right">
+                <div class="tm-list-meta">
+                    <strong>{{ dataItems.length }}</strong> {{ 'TASKMIND.TASKS' | translate }}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Toolbar -->
+        <div class="list-toolbar">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <button *ngIf="canAdd" class="btn btn-primary" (click)="addCommand()">
+                        <i class="bi bi-plus-circle me-2"></i>
+                        <span class="d-none d-sm-inline">{{ 'TODO_TASK.ADD_ITEM' | translate }}</span>
+                        <span class="d-inline d-sm-none"><i class="bi bi-plus"></i></span>
+                    </button>
+                </div>
+                <div class="col">
+                    <input *ngIf="canSearch" type="text" class="form-control" [(ngModel)]="searchTerm" [placeholder]="'TODO_TASK.SEARCH_PLACEHOLDER' | translate">
+                </div>
+                <div class="col-auto">
+                    <button *ngIf="canRefresh" class="btn btn-outline-primary" (click)="reloadData()" title="{{ 'TODO_TASK.REFRESH' | translate }}">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- List Items -->
+        <div class="list-items">
+            <div *ngFor="let item of dataItems" class="modern-list-item">
+                <!-- Item Header -->
+                <div class="list-item-header">
+                    <div class="list-item-icon">
+                        <i [class]="item.isDone ? 'bi bi-check-circle-fill text-success' : 'bi bi-circle'"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h5 class="list-item-title" [class.text-decoration-line-through]="item.isDone">
+                            {{ item.text }}
+                            <span *ngIf="item.todoList" class="ms-2 badge bg-secondary">
+                                <i class="bi bi-list-task me-1"></i>
+                                {{ item.todoList.title }}
+                            </span>
+                        </h5>
+                    </div>
+                    <div>
+                        <span class="badge" 
+                              [ngClass]="item.priority === 0 ? 'bg-info' : item.priority === 1 ? 'bg-warning' : 'bg-danger'">
+                            {{ item.priority === 0 ? ('TODO_TASK.PRIORITY.LOW' | translate) : 
+                               item.priority === 1 ? ('TODO_TASK.PRIORITY.MEDIUM' | translate) : 
+                               ('TODO_TASK.PRIORITY.HIGH' | translate) }}
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Note -->
+                <p class="list-item-description" *ngIf="item.note">
+                    <i class="bi bi-sticky me-1"></i>
+                    {{ item.note }}
+                </p>
+                
+                <!-- Details Grid -->
+                <div class="list-item-details">
+                    <div class="detail-row" *ngIf="item.category">
+                        <span class="detail-label">
+                            <i class="bi bi-tag me-1"></i>
+                            {{ 'TODO_TASK.CATEGORY' | translate }}:
+                        </span>
+                        <span class="detail-value">{{ item.category }}</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">
+                            <i class="bi bi-arrow-down-up me-1"></i>
+                            {{ 'TODO_TASK.SORT_ORDER' | translate }}:
+                        </span>
+                        <span class="detail-value">{{ item.sortOrder }}</span>
+                    </div>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">
+                            <i class="bi bi-circle-fill me-1"></i>
+                            {{ 'TODO_TASK.STATUS' | translate }}:
+                        </span>
+                        <span class="detail-value">
+                            <span class="badge" [ngClass]="item.isDone ? 'bg-success' : 'bg-secondary'">
+                                {{ item.isDone ? ('TODO_TASK.DONE' | translate) : ('TODO_TASK.OPEN' | translate) }}
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Actions -->
+                <div class="list-item-actions">
+                    <button *ngIf="canEdit" class="btn btn-outline-secondary" (click)="editCommand(item)">
+                        <i class="bi bi-pencil me-2"></i>
+                        {{ 'TODO_TASK.EDIT' | translate }}
+                    </button>
+                    <button *ngIf="canDelete" class="btn btn-outline-danger" (click)="deleteCommand(item)">
+                        <i class="bi bi-trash me-2"></i>
+                        {{ 'TODO_TASK.DELETE' | translate }}
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Empty State -->
+            <div *ngIf="dataItems.length === 0" class="empty-state">
+                <div class="empty-state-icon">
+                    <i class="bi bi-inbox"></i>
+                </div>
+                <p class="empty-state-text">{{ 'TODO_TASK.NO_DATA' | translate }}</p>
+            </div>
+        </div>
+    </div>
+</div>

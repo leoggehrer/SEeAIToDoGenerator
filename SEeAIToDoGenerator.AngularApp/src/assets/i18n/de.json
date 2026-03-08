@@ -1,0 +1,291 @@
+﻿{
+  "APP": {
+    "TITLE": "SEeAIToDoGenerator",
+    "BRAND": "SEeAIToDoGenerator"
+  },
+  "NAVIGATION": {
+    "DASHBOARD": "Dashboard"
+  },
+  "LANDING": {
+    "HERO": {
+      "BADGE": "Angular 19 + Bootstrap 5",
+      "TITLE": "Willkommen bei SEeAIToDoGenerator",
+      "SUBTITLE": "Dein moderner Startpunkt für Angular-Anwendungen. Schnell, sicher und vollständig anpassbar.",
+      "CTA_PRIMARY": "Jetzt starten",
+      "CTA_SECONDARY": "Dashboard ansehen"
+    },
+    "STATS": {
+      "RESPONSIVE": "Responsiv",
+      "LANGUAGES": "Sprachen",
+      "POSSIBILITIES": "Möglichkeiten"
+    },
+    "FEATURES": {
+      "TITLE": "Leistungsstarke Funktionen",
+      "SUBTITLE": "Alles was du brauchst, um moderne Webanwendungen zu erstellen",
+      "SECURE": {
+        "TITLE": "Sicher",
+        "TEXT": "JWT-basierte Authentifizierung und geschützte Routen für maximale Sicherheit."
+      },
+      "FAST": {
+        "TITLE": "Blitzschnell",
+        "TEXT": "Optimierte Performance mit Lazy Loading und effizienter Change Detection."
+      },
+      "MODERN": {
+        "TITLE": "Modern",
+        "TEXT": "Standalone Komponenten und neueste Angular-Technologien."
+      },
+      "RESPONSIVE": {
+        "TITLE": "Responsiv",
+        "TEXT": "Perfekte Darstellung auf allen Geräten dank Bootstrap 5."
+      },
+      "FLEXIBLE": {
+        "TITLE": "Flexibel",
+        "TEXT": "Code-Generierung und anpassbare Templates für schnelle Entwicklung."
+      },
+      "I18N": {
+        "TITLE": "Mehrsprachig",
+        "TEXT": "Vollständige Internationalisierung mit Deutsch und Englisch."
+      }
+    },
+    "CTA": {
+      "TITLE": "Bereit durchzustarten?",
+      "TEXT": "Melde dich an und entdecke alle Funktionen.",
+      "BUTTON": "Anmelden"
+    },
+    "FOOTER": {
+      "TEXT": "© 2025 SEeAIToDoGenerator. Mit ❤️ erstellt."
+    }
+  },
+  "AUTH": {
+    "LOGIN": "Anmelden",
+    "LOGOUT": "Abmelden",
+    "EMAIL": "E-Mail",
+    "PASSWORD": "Passwort",
+    "LOGIN_ERROR": "Anmeldung fehlgeschlagen"
+  },
+  "COMMON": {
+    "SAVE": "Speichern",
+    "CANCEL": "Abbrechen",
+    "DELETE": "Löschen",
+    "EDIT": "Bearbeiten",
+    "ADD": "Hinzufügen",
+    "CLOSE": "Schließen",
+    "BACK": "Zurück",
+    "REFRESH": "Aktualisieren",
+    "SEARCH": "Suchen",
+    "SEARCH_PLACEHOLDER": "Suche...",
+    "CONFIRM": "Bestätigen",
+    "YES": "Ja",
+    "NO": "Nein",
+    "OK": "OK",
+    "DELETE_CONFIRM": "Möchten Sie den Eintrag '{{item}}' löschen?",
+    "DELETE_TITLE": "Löschen bestätigen"
+  },
+  "DASHBOARD": {
+    "TITLE": "Dashboard",
+    "WELCOME": "Willkommen im SEeAIToDoGenerator!",
+    "PUBLIC_ACCESS": "Öffentlicher Bereich",
+    "PUBLIC_DESCRIPTION": "Diese Module sind für alle Benutzer zugänglich.",
+    "PROTECTED_AREA": "Geschützter Bereich",
+    "PROTECTED_DESCRIPTION": "Für diese Module ist eine Anmeldung erforderlich.",
+    "STATISTICS": "Statistiken",
+    "RECENT_ACTIVITIES": "Letzte Aktivitäten",
+    "STATS": {
+      "MODULES": "Module",
+      "STATUS": "Anmeldung",
+      "LANGUAGES": "Sprachen"
+    },
+    "EMPTY": {
+      "TITLE": "Dashboard ist bereit",
+      "TEXT": "Hier werden deine Module angezeigt, sobald sie hinzugefügt werden. Nutze den Code-Generator, um neue Entitäten zu erstellen.",
+      "HINT1": "Füge neue Entitäten im Backend hinzu",
+      "HINT2": "Führe den Code-Generator aus",
+      "HINT3": "Die Karten erscheinen automatisch hier"
+    },
+    "CARDS": {
+      "DASHBOARD_TITLE": "Dashboard",
+      "DASHBOARD_TEXT": "Übersicht",
+      "TODO_LISTS_TITLE": "ToDo Listen",
+      "TODO_LISTS_TEXT": "Listen verwalten",
+      "TODO_TASKS_TITLE": "Aufgaben",
+      "TODO_TASKS_TEXT": "Aufgaben verwalten",
+      "TASKMIND_GENERATOR_TITLE": "TaskMind Generator",
+      "TASKMIND_GENERATOR_TEXT": "KI ToDo-Seite öffnen",
+      "WEBHOOKS_TITLE": "Webhooks",
+      "WEBHOOKS_TEXT": "Webhook Konfigurationen"
+    }
+  },
+  "MESSAGE_BOX": {
+    "TITLE": "Hinweis",
+    "CONFIRM_TITLE": "Bitte bestätigen",
+    "CONFIRM": "Bestätigen",
+    "CANCEL": "Abbrechen",
+    "OK": "OK",
+    "CLOSE": "Schließen",
+    "YES": "Ja",
+    "NO": "Nein",
+    "SHOW_DETAILS": "Details anzeigen",
+    "HIDE_DETAILS": "Details ausblenden",
+    "DETAILS": "Details"
+  },
+  "ERRORS": {
+    "GENERAL": "Ein Fehler ist aufgetreten",
+    "NETWORK": "Netzwerkfehler",
+    "VALIDATION": "Validierungsfehler",
+    "NOT_FOUND": "Nicht gefunden",
+    "UNAUTHORIZED": "Nicht autorisiert",
+    "FORBIDDEN": "Zugriff verweigert",
+    "SERVER_ERROR": "Serverfehler",
+    "CREATE_FAILED": "Fehler beim Erstellen",
+    "SAVE_FAILED": "Fehler beim Speichern",
+    "DELETE_FAILED": "Fehler beim Löschen",
+    "LOAD_TEMPLATE_FAILED": "Fehler beim Laden der Vorlage"
+  },
+  "LANGUAGE": {
+    "TITLE": "Sprache"
+  },
+  "THEME": {
+    "TITLE": "Design",
+    "LIGHT": "Hell",
+    "DARK": "Dunkel",
+    "SWITCH_TO_LIGHT": "Zu hellem Design wechseln",
+    "SWITCH_TO_DARK": "Zu dunklem Design wechseln"
+  },
+  "TODO_LIST": {
+    "TITLE": "ToDo Listen",
+    "ADD_ITEM": "Neue Liste",
+    "SEARCH_PLACEHOLDER": "Listen durchsuchen...",
+    "REFRESH": "Aktualisieren",
+    "EDIT": "Bearbeiten",
+    "DELETE": "Löschen",
+    "BACK_TO_DASHBOARD": "Zurück zum Dashboard",
+    "NO_DATA": "Keine ToDo Listen vorhanden",
+    "TASKS": "Aufgaben",
+    "CREATED_AT": "Erstellt am",
+    "DETAIL_LEVEL": "Detailstufe",
+    "DETAIL_LEVEL_SHORT": "Kurz",
+    "DETAIL_LEVEL_MEDIUM": "Mittel",
+    "DETAIL_LEVEL_DETAILED": "Detailliert",
+    "STATUS": {
+      "GENERATING": "Wird generiert",
+      "READY": "Bereit",
+      "ERROR": "Fehler"
+    }
+  },
+  "TODO_TASK": {
+    "TITLE": "Aufgaben",
+    "ADD_ITEM": "Neue Aufgabe",
+    "SEARCH_PLACEHOLDER": "Aufgaben durchsuchen...",
+    "REFRESH": "Aktualisieren",
+    "EDIT": "Bearbeiten",
+    "DELETE": "Löschen",
+    "BACK_TO_DASHBOARD": "Zurück zum Dashboard",
+    "NO_DATA": "Keine Aufgaben vorhanden",
+    "CATEGORY": "Kategorie",
+    "SORT_ORDER": "Reihenfolge",
+    "STATUS": "Status",
+    "DONE": "Erledigt",
+    "OPEN": "Offen",
+    "PRIORITY": {
+      "LOW": "Niedrig",
+      "MEDIUM": "Mittel",
+      "HIGH": "Hoch"
+    }
+  },
+  "WEBHOOK": {
+    "TITLE": "Webhook Konfigurationen",
+    "ADD_ITEM": "Neuer Webhook",
+    "SEARCH_PLACEHOLDER": "Webhooks durchsuchen...",
+    "REFRESH": "Aktualisieren",
+    "EDIT": "Bearbeiten",
+    "DELETE": "Löschen",
+    "BACK_TO_DASHBOARD": "Zurück zum Dashboard",
+    "NO_DATA": "Keine Webhook Konfigurationen vorhanden",
+    "ACTIVE": "Aktiv",
+    "INACTIVE": "Inaktiv",
+    "LAST_USED": "Zuletzt verwendet",
+    "NEVER_USED": "Nie verwendet"
+  },
+  "TODO_LIST_EDIT": {
+    "CREATE_TITLE": "Neue ToDo Liste erstellen",
+    "EDIT_TITLE": "ToDo Liste bearbeiten",
+    "BASIC_INFO": "Grundinformationen",
+    "TITLE": "Titel",
+    "DESCRIPTION": "Beschreibung",
+    "SETTINGS": "Einstellungen",
+    "DETAIL_LEVEL": "Detailstufe",
+    "DETAIL_LEVEL_SHORT": "Kurz",
+    "DETAIL_LEVEL_MEDIUM": "Mittel",
+    "DETAIL_LEVEL_DETAILED": "Detailliert",
+    "STATUS": "Status",
+    "STATUS_GENERATING": "Wird generiert",
+    "STATUS_READY": "Bereit",
+    "STATUS_ERROR": "Fehler"
+  },
+  "TODO_TASK_EDIT": {
+    "CREATE_TITLE": "Neue Aufgabe erstellen",
+    "EDIT_TITLE": "Aufgabe bearbeiten",
+    "BASIC_INFO": "Grundinformationen",
+    "TEXT": "Aufgabe",
+    "NOTE": "Notiz",
+    "CATEGORIZATION": "Kategorisierung",
+    "TODO_LIST": "ToDo Liste",
+    "SELECT_TODO_LIST": "Bitte wählen...",
+    "CATEGORY": "Kategorie",
+    "PRIORITY": "Priorität",
+    "PRIORITY_LOW": "Niedrig",
+    "PRIORITY_MEDIUM": "Mittel",
+    "PRIORITY_HIGH": "Hoch",
+    "STATUS_ORDER": "Status & Reihenfolge",
+    "SORT_ORDER": "Reihenfolge",
+    "IS_DONE": "Erledigt"
+  },
+  "WEBHOOK_EDIT": {
+    "CREATE_TITLE": "Neuen Webhook erstellen",
+    "EDIT_TITLE": "Webhook bearbeiten",
+    "BASIC_INFO": "Grundinformationen",
+    "WEBHOOK_URL": "Webhook URL",
+    "DESCRIPTION": "Beschreibung",
+    "IS_ACTIVE": "Aktiv"
+  },
+  "TASKMIND": {
+    "BRAND_PREFIX": "Task",
+    "BRAND_HIGHLIGHT": "Mind",
+    "LISTS": "Listen",
+    "AI_ACTIVE": "KI aktiv",
+    "WHAT_PLANNED": "Was planst du?",
+    "WHAT_PLANNED_SUB": "Beschreibe dein Vorhaben - die KI erstellt passende Aufgaben.",
+    "DESCRIPTION_PLACEHOLDER": "z.B. Ich moechte meinen Urlaub nach Japan planen oder eine Website fuer mein Cafe launchen",
+    "TASK_COUNT": "Anzahl Aufgaben",
+    "TASKS": "Aufgaben",
+    "DETAIL_LEVEL": "Detailtiefe",
+    "GENERATING": "KI generiert Aufgaben...",
+    "GENERATING_SHORT": "Generiert...",
+    "GENERATE_BUTTON": "* ToDo-Liste generieren",
+    "MY_LISTS": "Meine Listen",
+    "HISTORY_SEARCH_PLACEHOLDER": "Meine Listen durchsuchen...",
+    "NO_LISTS": "Noch keine Listen",
+    "NO_LIST_YET": "Noch keine Liste",
+    "EMPTY_SUB": "Gib links eine Beschreibung ein und lass die KI Aufgaben generieren.",
+    "PROGRESS": "Fortschritt",
+    "DONE": "erledigt",
+    "OF": "von",
+    "CLEAR_DONE": "Erledigte loeschen",
+    "DELETE_LIST": "Liste loeschen",
+    "DETAIL": {
+      "SHORT": "Kurz & knapp",
+      "MEDIUM": "Mittel",
+      "DETAILED": "Detailliert"
+    },
+    "PRIORITY": {
+      "LOW": "niedrig",
+      "MEDIUM": "mittel",
+      "HIGH": "hoch"
+    },
+    "ALERTS": {
+      "DESCRIPTION_REQUIRED": "Bitte eine Beschreibung eingeben.",
+      "WEBHOOK_NOT_CONFIGURED": "Webhook URL ist nicht konfiguriert. Bitte environment pruefen.",
+      "DB_SAVE_FAILED": "Speichern in der Datenbank fehlgeschlagen. Bitte pruefe Backend und Webhook."
+    }
+  }
+}

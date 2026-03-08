@@ -1,0 +1,291 @@
+﻿{
+  "APP": {
+    "TITLE": "SEeAIToDoGenerator",
+    "BRAND": "SEeAIToDoGenerator"
+  },
+  "NAVIGATION": {
+    "DASHBOARD": "Dashboard"
+  },
+  "LANDING": {
+    "HERO": {
+      "BADGE": "Angular 19 + Bootstrap 5",
+      "TITLE": "Welcome to SEeAIToDoGenerator",
+      "SUBTITLE": "Your modern starting point for Angular applications. Fast, secure, and fully customizable.",
+      "CTA_PRIMARY": "Get Started",
+      "CTA_SECONDARY": "View Dashboard"
+    },
+    "STATS": {
+      "RESPONSIVE": "Responsive",
+      "LANGUAGES": "Languages",
+      "POSSIBILITIES": "Possibilities"
+    },
+    "FEATURES": {
+      "TITLE": "Powerful Features",
+      "SUBTITLE": "Everything you need to build modern web applications",
+      "SECURE": {
+        "TITLE": "Secure",
+        "TEXT": "JWT-based authentication and protected routes for maximum security."
+      },
+      "FAST": {
+        "TITLE": "Lightning Fast",
+        "TEXT": "Optimized performance with lazy loading and efficient change detection."
+      },
+      "MODERN": {
+        "TITLE": "Modern",
+        "TEXT": "Standalone components and latest Angular technologies."
+      },
+      "RESPONSIVE": {
+        "TITLE": "Responsive",
+        "TEXT": "Perfect display on all devices thanks to Bootstrap 5."
+      },
+      "FLEXIBLE": {
+        "TITLE": "Flexible",
+        "TEXT": "Code generation and customizable templates for rapid development."
+      },
+      "I18N": {
+        "TITLE": "Multilingual",
+        "TEXT": "Full internationalization with German and English support."
+      }
+    },
+    "CTA": {
+      "TITLE": "Ready to get started?",
+      "TEXT": "Sign in and discover all features.",
+      "BUTTON": "Sign In"
+    },
+    "FOOTER": {
+      "TEXT": "© 2025 SEeAIToDoGenerator. Built with ❤️."
+    }
+  },
+  "AUTH": {
+    "LOGIN": "Login",
+    "LOGOUT": "Logout",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "LOGIN_ERROR": "Login failed"
+  },
+  "COMMON": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "DELETE": "Delete",
+    "EDIT": "Edit",
+    "ADD": "Add",
+    "CLOSE": "Close",
+    "BACK": "Back",
+    "REFRESH": "Refresh",
+    "SEARCH": "Search",
+    "SEARCH_PLACEHOLDER": "Search...",
+    "CONFIRM": "Confirm",
+    "YES": "Yes",
+    "NO": "No",
+    "OK": "OK",
+    "DELETE_CONFIRM": "Do you want to delete the entry '{{item}}'?",
+    "DELETE_TITLE": "Confirm Delete"
+  },
+  "DASHBOARD": {
+    "TITLE": "Dashboard",
+    "WELCOME": "Welcome to SEeAIToDoGenerator!",
+    "PUBLIC_ACCESS": "Public Area",
+    "PUBLIC_DESCRIPTION": "These modules are accessible to all users.",
+    "PROTECTED_AREA": "Protected Area",
+    "PROTECTED_DESCRIPTION": "Login is required for these modules.",
+    "STATISTICS": "Statistics",
+    "RECENT_ACTIVITIES": "Recent Activities",
+    "STATS": {
+      "MODULES": "Modules",
+      "STATUS": "Login",
+      "LANGUAGES": "Languages"
+    },
+    "EMPTY": {
+      "TITLE": "Dashboard is ready",
+      "TEXT": "Your modules will appear here once they are added. Use the code generator to create new entities.",
+      "HINT1": "Add new entities in the backend",
+      "HINT2": "Run the code generator",
+      "HINT3": "Cards will appear here automatically"
+    },
+    "CARDS": {
+      "DASHBOARD_TITLE": "Dashboard",
+      "DASHBOARD_TEXT": "Overview",
+      "TODO_LISTS_TITLE": "ToDo Lists",
+      "TODO_LISTS_TEXT": "Manage Lists",
+      "TODO_TASKS_TITLE": "Tasks",
+      "TODO_TASKS_TEXT": "Manage Tasks",
+      "TASKMIND_GENERATOR_TITLE": "TaskMind Generator",
+      "TASKMIND_GENERATOR_TEXT": "Open AI ToDo Page",
+      "WEBHOOKS_TITLE": "Webhooks",
+      "WEBHOOKS_TEXT": "Webhook Configurations"
+    }
+  },
+  "MESSAGE_BOX": {
+    "TITLE": "Notice",
+    "CONFIRM_TITLE": "Please confirm",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel",
+    "OK": "OK",
+    "CLOSE": "Close",
+    "YES": "Yes",
+    "NO": "No",
+    "SHOW_DETAILS": "Show details",
+    "HIDE_DETAILS": "Hide details",
+    "DETAILS": "Details"
+  },
+  "ERRORS": {
+    "GENERAL": "An error occurred",
+    "NETWORK": "Network error",
+    "VALIDATION": "Validation error",
+    "NOT_FOUND": "Not found",
+    "UNAUTHORIZED": "Unauthorized",
+    "FORBIDDEN": "Access denied",
+    "SERVER_ERROR": "Server error",
+    "CREATE_FAILED": "Error creating",
+    "SAVE_FAILED": "Error saving",
+    "DELETE_FAILED": "Error deleting",
+    "LOAD_TEMPLATE_FAILED": "Failed to load template"
+  },
+  "LANGUAGE": {
+    "TITLE": "Language"
+  },
+  "THEME": {
+    "TITLE": "Theme",
+    "LIGHT": "Light",
+    "DARK": "Dark",
+    "SWITCH_TO_LIGHT": "Switch to light theme",
+    "SWITCH_TO_DARK": "Switch to dark theme"
+  },
+  "TODO_LIST": {
+    "TITLE": "ToDo Lists",
+    "ADD_ITEM": "New List",
+    "SEARCH_PLACEHOLDER": "Search lists...",
+    "REFRESH": "Refresh",
+    "EDIT": "Edit",
+    "DELETE": "Delete",
+    "BACK_TO_DASHBOARD": "Back to Dashboard",
+    "NO_DATA": "No ToDo lists available",
+    "TASKS": "Tasks",
+    "CREATED_AT": "Created at",
+    "DETAIL_LEVEL": "Detail Level",
+    "DETAIL_LEVEL_SHORT": "Short",
+    "DETAIL_LEVEL_MEDIUM": "Medium",
+    "DETAIL_LEVEL_DETAILED": "Detailed",
+    "STATUS": {
+      "GENERATING": "Generating",
+      "READY": "Ready",
+      "ERROR": "Error"
+    }
+  },
+  "TODO_TASK": {
+    "TITLE": "Tasks",
+    "ADD_ITEM": "New Task",
+    "SEARCH_PLACEHOLDER": "Search tasks...",
+    "REFRESH": "Refresh",
+    "EDIT": "Edit",
+    "DELETE": "Delete",
+    "BACK_TO_DASHBOARD": "Back to Dashboard",
+    "NO_DATA": "No tasks available",
+    "CATEGORY": "Category",
+    "SORT_ORDER": "Order",
+    "STATUS": "Status",
+    "DONE": "Done",
+    "OPEN": "Open",
+    "PRIORITY": {
+      "LOW": "Low",
+      "MEDIUM": "Medium",
+      "HIGH": "High"
+    }
+  },
+  "WEBHOOK": {
+    "TITLE": "Webhook Configurations",
+    "ADD_ITEM": "New Webhook",
+    "SEARCH_PLACEHOLDER": "Search webhooks...",
+    "REFRESH": "Refresh",
+    "EDIT": "Edit",
+    "DELETE": "Delete",
+    "BACK_TO_DASHBOARD": "Back to Dashboard",
+    "NO_DATA": "No webhook configurations available",
+    "ACTIVE": "Active",
+    "INACTIVE": "Inactive",
+    "LAST_USED": "Last used",
+    "NEVER_USED": "Never used"
+  },
+  "TODO_LIST_EDIT": {
+    "CREATE_TITLE": "Create New ToDo List",
+    "EDIT_TITLE": "Edit ToDo List",
+    "BASIC_INFO": "Basic Information",
+    "TITLE": "Title",
+    "DESCRIPTION": "Description",
+    "SETTINGS": "Settings",
+    "DETAIL_LEVEL": "Detail Level",
+    "DETAIL_LEVEL_SHORT": "Short",
+    "DETAIL_LEVEL_MEDIUM": "Medium",
+    "DETAIL_LEVEL_DETAILED": "Detailed",
+    "STATUS": "Status",
+    "STATUS_GENERATING": "Generating",
+    "STATUS_READY": "Ready",
+    "STATUS_ERROR": "Error"
+  },
+  "TODO_TASK_EDIT": {
+    "CREATE_TITLE": "Create New Task",
+    "EDIT_TITLE": "Edit Task",
+    "BASIC_INFO": "Basic Information",
+    "TEXT": "Task",
+    "NOTE": "Note",
+    "CATEGORIZATION": "Categorization",
+    "TODO_LIST": "ToDo List",
+    "SELECT_TODO_LIST": "Please select...",
+    "CATEGORY": "Category",
+    "PRIORITY": "Priority",
+    "PRIORITY_LOW": "Low",
+    "PRIORITY_MEDIUM": "Medium",
+    "PRIORITY_HIGH": "High",
+    "STATUS_ORDER": "Status & Order",
+    "SORT_ORDER": "Order",
+    "IS_DONE": "Done"
+  },
+  "WEBHOOK_EDIT": {
+    "CREATE_TITLE": "Create New Webhook",
+    "EDIT_TITLE": "Edit Webhook",
+    "BASIC_INFO": "Basic Information",
+    "WEBHOOK_URL": "Webhook URL",
+    "DESCRIPTION": "Description",
+    "IS_ACTIVE": "Active"
+  },
+  "TASKMIND": {
+    "BRAND_PREFIX": "Task",
+    "BRAND_HIGHLIGHT": "Mind",
+    "LISTS": "Lists",
+    "AI_ACTIVE": "AI active",
+    "WHAT_PLANNED": "What are you planning?",
+    "WHAT_PLANNED_SUB": "Describe your plan - AI creates matching tasks.",
+    "DESCRIPTION_PLACEHOLDER": "e.g. I want to plan my Japan vacation or launch a website for my cafe",
+    "TASK_COUNT": "Task count",
+    "TASKS": "tasks",
+    "DETAIL_LEVEL": "Detail level",
+    "GENERATING": "AI is generating tasks...",
+    "GENERATING_SHORT": "Generating...",
+    "GENERATE_BUTTON": "* Generate ToDo list",
+    "MY_LISTS": "My lists",
+    "HISTORY_SEARCH_PLACEHOLDER": "Search my lists...",
+    "NO_LISTS": "No lists yet",
+    "NO_LIST_YET": "No list yet",
+    "EMPTY_SUB": "Enter a description on the left and let AI generate your tasks.",
+    "PROGRESS": "Progress",
+    "DONE": "done",
+    "OF": "of",
+    "CLEAR_DONE": "Clear completed",
+    "DELETE_LIST": "Delete list",
+    "DETAIL": {
+      "SHORT": "Short & concise",
+      "MEDIUM": "Medium",
+      "DETAILED": "Detailed"
+    },
+    "PRIORITY": {
+      "LOW": "low",
+      "MEDIUM": "medium",
+      "HIGH": "high"
+    },
+    "ALERTS": {
+      "DESCRIPTION_REQUIRED": "Please enter a description.",
+      "WEBHOOK_NOT_CONFIGURED": "Webhook URL is not configured. Please check environment.",
+      "DB_SAVE_FAILED": "Saving to the database failed. Please check backend and webhook."
+    }
+  }
+}
