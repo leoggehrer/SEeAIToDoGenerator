@@ -1,4 +1,4 @@
-﻿{
+{
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
@@ -38,7 +38,7 @@
             "console": "externalTerminal",
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
-                "ASPNETCORE_URLS": "https://localhost:7074"
+                "ASPNETCORE_URLS": "https://localhost:7134"
             }
         }
     ]

@@ -1261,6 +1261,7 @@ body {
   position: relative;
   z-index: 1;
   max-width: 800px;
+  margin: 0 auto;
   color: #ffffff;
 }
 

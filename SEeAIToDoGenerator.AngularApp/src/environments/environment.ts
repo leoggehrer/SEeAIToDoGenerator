@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   pwaEnabled: false,
   loginRequired: false,
-  API_BASE_URL: 'https://localhost:7074/api',
+  API_BASE_URL: 'https://localhost:7134/api',
   AI_TODO_WEBHOOK_URL: 'http://localhost:5678/webhook/generate-todo-ai',
   LOCALE: 'de-DE',
 };

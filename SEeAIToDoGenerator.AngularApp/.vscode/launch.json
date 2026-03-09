@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "0.2.0",
   "configurations": [
     {
@@ -6,7 +6,7 @@
       "request": "launch",
       "preLaunchTask": "npm: start",
       "name": "Angular localhost (Chrome)",
-      "url": "http://localhost:54091",
+      "url": "http://localhost:54141",
       "webRoot": "${workspaceFolder}"
     }
   ]
