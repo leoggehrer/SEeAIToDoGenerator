@@ -378,11 +378,6 @@ FodyWeavers.xsd
 
 #SEeAIToDoGeneratorStart
 /SEeAIToDoGenerator.Common/Contracts/App/ITodoList.cs
-/SEeAIToDoGenerator.WebApi/Models/App/TodoList.cs
-/SEeAIToDoGenerator.WebApi/Models/App/TodoTask.cs
-/SEeAIToDoGenerator.Logic/DataContext/ProjectDbContext.Generation.cs
-/SEeAIToDoGenerator.Logic/Contracts/IContext.Generation.cs
-/SEeAIToDoGenerator.WebApi/Models/VersionEntityObject.Factory.cs
 /SEeAIToDoGenerator.Common/Contracts/App/ITodoTask.cs
 /SEeAIToDoGenerator.Logic/Entities/App/TodoList.Generation.cs
 /SEeAIToDoGenerator.Logic/Entities/App/TodoTask.Generation.cs
@@ -398,9 +393,14 @@ FodyWeavers.xsd
 /SEeAIToDoGenerator.WebApi/Models/App/TodoTask.Factory.cs
 /SEeAIToDoGenerator.WebApi/Models/App/TodoList.Edit.cs
 /SEeAIToDoGenerator.WebApi/Models/App/TodoTask.Edit.cs
+/SEeAIToDoGenerator.WebApi/Models/App/TodoList.cs
+/SEeAIToDoGenerator.WebApi/Models/App/TodoTask.cs
 /SEeAIToDoGenerator.Common/Contracts/IVersionEntityObject.cs
 /SEeAIToDoGenerator.Logic/Entities/VersionEntityObject.Generation.cs
+/SEeAIToDoGenerator.Logic/DataContext/ProjectDbContext.Generation.cs
+/SEeAIToDoGenerator.Logic/Contracts/IContext.Generation.cs
 /SEeAIToDoGenerator.WebApi/Controllers/ContextAccessor.Generation.cs
+/SEeAIToDoGenerator.WebApi/Models/VersionEntityObject.Factory.cs
 /SEeAIToDoGenerator.WebApi/Models/VersionEntityObject.cs
 /SEeAIToDoGenerator.WebApi/Models/VersionEntityObject.Inheritance.cs
 /SEeAIToDoGenerator.WebApi/Models/VersionEntityObject.Edit.cs
